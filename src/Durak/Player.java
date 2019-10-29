@@ -59,6 +59,7 @@ public class Player {
             if (temp.getValue() == null) {
                 enemyCard = temp.getKey();
             }
+            System.out.println("yttryuio");
            // contrAttack() {
             }
         return false;
