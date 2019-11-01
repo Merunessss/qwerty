@@ -45,25 +45,40 @@ public class Player {
             MyCards.remove(num);
             return;
         } else {
-            if (findRightNull(table)) {
+            Card temp=findRightNull(table);
+            if (temp != null) {
+                 contrAttack(temp) ;
+            } else {
 
             }
         }
-
-
     }
 
-    private boolean findRightNull(Map<Card, Card> table) {
+    private Card contrAttack(Card temp) {
+        Card result = null;
+        for(Card tempCard : MyCards){
+            if(tempCard.cardValue.number > temp.cardValue.number){
+                result = tempCard;
+            }
+        }
+        return result;
+    }
+
+
+    private Card findRightNull(Map<Card, Card> table) {
+
         Card enemyCard = null;
         for (Map.Entry<Card, Card> temp : table.entrySet()) {
             if (temp.getValue() == null) {
                 enemyCard = temp.getKey();
             }
-            System.out.println("yttryuio");
-           // contrAttack() {
-            }
-        return false;
         }
+        return enemyCard;
     }
+}
+
+
+
+
 
 
