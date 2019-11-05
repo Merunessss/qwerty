@@ -7,7 +7,9 @@ import java.util.*;
 public class TheGame {
 
 
-    ArrayList<Card> KolodaCard = new ArrayList<Card>();
+   static ArrayList<Card> KolodaCard = new ArrayList<Card>();
+
+    static boolean mustDobratKart = false;
 
     Player PlOne, PlTwo;
     Mast kozir;
@@ -20,14 +22,15 @@ public class TheGame {
         chooseKozir();
         rasstasovka();
         firstStep();
+
+
     }
 
-    void startToPlay(){
-        if(PlOne.hisTurn){
-          PlOne.takeTurn(table);
+    void startToPlay() {
+        if (PlOne.hisTurn) {
+            PlOne.takeTurn(table);
         }
     }
-
 
 
     private void firstStep() {
@@ -66,7 +69,7 @@ public class TheGame {
 
     private void rasstasovka() {
 
-        for (int i = 0; i < 14; i++) {
+        for (int i = 0; i < 2; i++) {
             if (i % 2 == 0) {
 
                 PlOne.MyCards.add(KolodaCard.get(i));
@@ -122,13 +125,22 @@ public class TheGame {
 
     public static void main(String[] args) {
 
+
         Player durakOne = new Player("DurakOne");
         Player durakTwo = new Player("DurakTwo");
 
         TheGame Duraki = new TheGame(durakOne, durakTwo);
+        System.out.println(Duraki.kozir);
+//
+//        System.out.println("КАРТЫ ИГРОКА ОДИН" +  durakOne.MyCards);
+//        System.out.println("КАРТЫ ИГРОКА ДВА" +  durakTwo.MyCards);
+//
+//        System.out.println(Duraki.table);
 
-        System.out.println(Duraki);
-
+        do {
+            durakOne.takeTurn(Duraki.table);
+            durakTwo.takeTurn(Duraki.table);
+        } while (Duraki.KolodaCard.size() != 0 && Duraki.PlOne.MyCards.size() * Duraki.PlTwo.MyCards.size() != 0);
     }
 
 

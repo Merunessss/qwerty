@@ -1,6 +1,6 @@
 package Durak;
 
-public class Card {
+public class Card implements Comparable<Card> {
 
     Mast mast;
     CardValue cardValue;
@@ -11,6 +11,7 @@ public class Card {
     }
 
     public static void main(String[] args) {
+        System.out.println(Mast.Bubna.compareTo(Mast.Chervi));
 
 
     }
@@ -21,6 +22,11 @@ public class Card {
                 "mast=" + mast +
                 ", cardValue=" + cardValue +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        return this.mast.compareTo(o.mast) *111 + this.cardValue.compareTo(o.cardValue);
     }
 }
 

@@ -3,6 +3,7 @@ package Durak;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Player {
 
@@ -10,7 +11,7 @@ public class Player {
 
     boolean hisTurn;
 
-    ArrayList<Card> MyCards = new ArrayList<Card>();
+    ArrayList<Card> MyCards = new ArrayList<>();
 
     public Player(String name) {
         this.name = name;
@@ -37,17 +38,38 @@ public class Player {
     }
 
     public void takeTurn(Map<Card, Card> table) {
-        Random randomCard = new Random();
+        // нет ли карт на рабочем столе
+        //
+        if (TheGame.mustDobratKart = true) {
+            for (int i = MyCards.size(); i < 8 && TheGame.KolodaCard.size() != 0; i++) {
+                MyCards.add(TheGame.KolodaCard.get(i));
+            }
+
+            TheGame.mustDobratKart = false;
+        }
+        System.out.println(table);
+        System.out.println("Hod igroka " + this.name);
+        System.out.println(this.MyCards);
+
+
+        Scanner scn = new Scanner(System.in);
+        int cardIndex = scn.nextInt();
+        if (cardIndex == 33) {
+            MyCards.addAll(table.keySet());
+            MyCards.addAll(table.values());
+            return;
+        }
         if (table.size() == 0) {
-            int num = randomCard.nextInt(6);
-            Card card = MyCards.get(num);
+            Card card = MyCards.get(cardIndex);
             table.put(card, null);
-            MyCards.remove(num);
+            MyCards.remove(cardIndex);
             return;
         } else {
-            Card temp=findRightNull(table);
+            Card temp = findRightNull(table);
             if (temp != null) {
-                 contrAttack(temp) ;
+                Card card = MyCards.get(cardIndex);
+                table.put(card, null);
+                MyCards.remove(cardIndex);
             } else {
 
             }
@@ -56,8 +78,8 @@ public class Player {
 
     private Card contrAttack(Card temp) {
         Card result = null;
-        for(Card tempCard : MyCards){
-            if(tempCard.cardValue.number > temp.cardValue.number){
+        for (Card tempCard : MyCards) {
+            if (tempCard.cardValue.number > temp.cardValue.number) {
                 result = tempCard;
             }
         }
