@@ -69,7 +69,7 @@ public class TheGame {
 
     private void rasstasovka() {
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 14; i++) {
             if (i % 2 == 0) {
 
                 PlOne.MyCards.add(KolodaCard.get(i));
