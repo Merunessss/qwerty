@@ -2,6 +2,8 @@ import com.company.HomeWork;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -73,8 +75,19 @@ public class HomeWork3 {
         //System.out.println(work3.one(listOne, listTwo, listTree));
         //work3.genericRealisation(apelsins, apelsins);
 
-        System.out.println( work3.sameForObjects(listOne));
+      //  System.out.println( work3.sameForObjects(listObject,listObject2));
 
+
+        LocalDateTime d1=LocalDateTime.of(2019,12,12,12,00);
+        LocalDateTime d2=LocalDateTime.of(2019,12,12,13,00);
+        LocalDateTime d3=LocalDateTime.of(2019,12,12,11,00);
+        System.out.println(ChronoUnit.MINUTES.between(d2, d1));
+        System.out.println(ChronoUnit.MINUTES.between(d1, d3));
+        if(ChronoUnit.MINUTES.between(d1, d3) <= -60 | ChronoUnit.MINUTES.between(d1, d3) >= 60){
+            System.out.println("VSE NORM BRONIRUY");
+        } else {
+            System.out.println("KAVALER SORRY VSE ZANYATO");
+        }
 
     }
 

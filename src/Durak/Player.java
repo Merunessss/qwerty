@@ -41,7 +41,7 @@ public class Player {
         // нет ли карт на рабочем столе
         //
         if (TheGame.mustDobratKart = true) {
-            for (int i = MyCards.size(); i < 8 && TheGame.KolodaCard.size() != 0; i++) {
+            for (int i = MyCards.size(); i < 7 && TheGame.KolodaCard.size() != 0; i++) {
                 MyCards.add(TheGame.KolodaCard.get(i));
             }
 
@@ -54,24 +54,32 @@ public class Player {
 
         Scanner scn = new Scanner(System.in);
         int cardIndex = scn.nextInt();
+        if(cardIndex==55){
+            table.clear();
+            return;
+        }
         if (cardIndex == 33) {
             MyCards.addAll(table.keySet());
             MyCards.addAll(table.values());
+            table.clear();
             return;
         }
+        Card card = MyCards.get(cardIndex);
         if (table.size() == 0) {
-            Card card = MyCards.get(cardIndex);
+
             table.put(card, null);
             MyCards.remove(cardIndex);
             return;
         } else {
             Card temp = findRightNull(table);
-            if (temp != null) {
-                Card card = MyCards.get(cardIndex);
+            if (temp == null) {
+
                 table.put(card, null);
                 MyCards.remove(cardIndex);
             } else {
-
+table.put(temp,card);
+                MyCards.remove(cardIndex);
+                return;
             }
         }
     }
