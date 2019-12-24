@@ -29,6 +29,11 @@ public class Order {
         return counterSum;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderNum=" + orderNum +
+                ", foodSum=" + foodSum +
+                '}';
+    }
 }

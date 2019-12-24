@@ -9,22 +9,91 @@ import java.util.*;
 
 public class Customer {
 
-    String name;
     String telNumber;
+    String name;
+    int iD=-1;
 
+    public Customer(String name, String telNumber) {
+        this.name = name;
+        this.telNumber = telNumber;
+    }
+
+    public Customer() {
+    }
+
+    public void setiD(int iD) {
+        if(this.iD != -1){
+            System.out.println("ID unmodified !!! Sorry");
+            return;
+        }
+        this.iD = iD;
+    }
 
     public static void main(String[] args) {
 
         Restaurant rest = new Restaurant("NewYork", 5, 8, 24);
         Customer masha = new Customer();
-        masha.bookTable(rest, 1, LocalDateTime.of(2019, 11, 13, 12, 00, 00), 2);
 
-//        LocalDateTime d1 = LocalDateTime.of(2019, 12, 12, 12, 12);
-//        LocalDateTime d2 = LocalDateTime.of(2019, 12, 12, 13, 12);
-//        System.out.println(ChronoUnit.MINUTES.between(d2, d1));
+        Scanner scanner = new Scanner(System.in);
+
+//        System.out.println("Enter the table # please ");
+//
+//        int numTable = scanner.nextInt();
+//
+//        System.out.println("NA KOGDA HOTITE dd/mm/yyyy/hh/mm ");
+//
+//        String dataBook = scanner.next();
+//
+//        int year = Integer.valueOf(dataBook.substring(6, 10));
+//
+//        int month = Integer.valueOf(dataBook.substring(3, 5));
+//
+//        int day = Integer.valueOf(dataBook.substring(0, 2));
+//
+//        int hour = Integer.valueOf(dataBook.substring(11, 13));
+//
+//        int minute = Integer.valueOf(dataBook.substring(14, 16));
+//
+//
+//        LocalDateTime bookingTime = LocalDateTime.of(year, month, day, hour, minute);
+//
+//        System.out.println(" SKOLKO NADO VREMYA ");
+//
+//        int durationBook = scanner.nextInt();
+//
+//        masha.bookTable(rest, numTable, bookingTime, durationBook);
+
+        masha.checkMenu(rest);
+
+        System.out.println(" DELAI ZAKAZ " );
+
+        boolean flag = true;
+
+        Map<Dish, Map<Integer, Boolean>> zakaz = new HashMap<>();
+
+        while(flag == true){
+            System.out.println("Vedite # bluda i skolko porciy ");
+            String bludoSkolko = scanner.nextLine();
+            //System.out.println(bludoSkolko);
+            String []  array=bludoSkolko.split("[ ]+");
+           // System.out.println(Arrays.toString(array));
+            if(array[0].trim().equals("exit")){
+                break;
+            }
+            HashMap<Integer,Boolean> countBlud=new HashMap<>();
+
+            countBlud.put(Integer.valueOf(array[1].trim()),false);
+            zakaz.put(Dish.values()[Integer.valueOf(array[0].trim())-1],countBlud);
+        }
+
+        masha.placeOrder(zakaz, rest);
+        System.out.println(rest.orders.toString());
 
 
     }
+
+
+
 
 
     void checkTables(Restaurant restor, LocalDateTime checkTime, int timeToSpend) {
@@ -61,10 +130,14 @@ public class Customer {
     }
 
     void checkMenu(Restaurant restor) {
-        System.out.println(restor.eDish);
+        int index=1;
+        for (Dish temp:Dish.values() ) {
+            System.out.println( index++ +". "+temp);
+        }
+
     }
 
-    Order placeOrder(Map<Dish,Map <Integer,Boolean>> allFood, Restaurant restaurant) {
+    Order placeOrder(Map<Dish, Map<Integer, Boolean>> allFood, Restaurant restaurant) {
 
         Order zakaz = new Order(restaurant.orders.size() + 1);
 
@@ -83,17 +156,17 @@ public class Customer {
             if (temp.orderNum == orderNum1) {
                 result = true;
                 if (temp.foodSum.get(bludo) == null) {
-                    Map<Integer,Boolean> dodatok=new TreeMap<>();
-                    dodatok.put(1,false);
+                    Map<Integer, Boolean> dodatok = new TreeMap<>();
+                    dodatok.put(1, false);
                     temp.foodSum.put(bludo, dodatok);
                 } else {
-                    Map<Integer,Boolean> counter= temp.foodSum.get(bludo);
-                    int countBorsh=0;
-                    for(Map.Entry<Integer,Boolean> qwe:counter.entrySet()){
-                        countBorsh=qwe.getKey();
-                              }
+                    Map<Integer, Boolean> counter = temp.foodSum.get(bludo);
+                    int countBorsh = 0;
+                    for (Map.Entry<Integer, Boolean> qwe : counter.entrySet()) {
+                        countBorsh = qwe.getKey();
+                    }
                     counter.remove(countBorsh);
-                    counter.put(countBorsh+1,false);
+                    counter.put(countBorsh + 1, false);
 
                 }
             }
@@ -108,13 +181,26 @@ public class Customer {
 
         for (Order temp : rest.orders) {
             if (temp.orderNum == orderNumOne) {
-                int count = temp.foodSum.get(bludo);
-                temp.foodSum.put(bludo, count < countDel ? 0 : count - countDel);
+                Map<Integer, Boolean> tempBludo = temp.foodSum.get(bludo);
+                int quantityBludo = 0;
+                for (Map.Entry<Integer, Boolean> qwe : tempBludo.entrySet()) {
+                    quantityBludo = qwe.getKey();
+                }
+                tempBludo.remove(quantityBludo);
+                tempBludo.put(quantityBludo - countDel, false);
                 result = true;
             }
         }
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "telNumber='" + telNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", iD=" + iD +
+                '}';
+    }
 }
 

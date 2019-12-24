@@ -17,7 +17,7 @@ public class Table {
     }
 
     boolean ifTableAvailable( LocalDateTime startSecond, LocalDateTime endSecond) {
-        boolean result = false;
+        boolean result = mapTable.size()==0?true:false;
 
 
         LocalDateTime startFirst;
