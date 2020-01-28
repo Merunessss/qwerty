@@ -5,14 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Order {
+    public int id;
     int orderNum;
     HashMap<Dish, Map<Integer,Boolean>> foodSum = new HashMap<>();
 
     public Order(int orderNum) {
         this.orderNum = orderNum;
     }
-
-
 
 
 

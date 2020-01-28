@@ -2,42 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5fb7243-bfce-4aa3-81ca-b2628f43d190" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Coding_Challenge/Tasks_OneToTen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/CustomerDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/DAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/DishDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/MyConnect.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/qwerty$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/qwerty.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Arrays/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Coding_Challenge/Tasks_OneToTen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/CustomerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/DishDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/MyConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/qwerty.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/qwerty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/OrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arrays.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Arrays.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/CustomerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Dish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/DishDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/DishDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/MyConnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/MyConnect.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Restaurant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Arrays/Restaurant_Ya_Baldy/Restaurant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HomeWork3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomeWork3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lambda/Field.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lambda/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lambda/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lambda/Kubik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lambda/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lambda/PlayerKub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lambda/PlayerKub.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/DishDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/DishDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/MyConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/MyConnect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant_Ya_Baldy/Restaurant.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,9 +43,9 @@
       <list>
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="JavaFXApplication" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -90,6 +77,9 @@
       <recent name="Restaurant_Ya_Baldy" />
       <recent name="com.company" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Restaurant_Ya_Baldy" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -110,14 +100,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CustomerDAO">
-    <configuration name="Customer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Restaurant_Ya_Baldy.Customer" />
+  <component name="RunManager" selected="Application.Game">
+    <configuration name="Field" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lambda.Field" />
       <module name="Arrays" />
-      <option name="ENABLE_SWING_INSPECTOR" value="true" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Restaurant_Ya_Baldy.*" />
+          <option name="PATTERN" value="Lambda.sdas" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Restaurant_Ya_Baldy.CustomerDAO" />
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lambda.Game" />
       <module name="Arrays" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Restaurant_Ya_Baldy.*" />
+          <option name="PATTERN" value="Lambda.sdas" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,12 +127,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Restaurant_Ya_Baldy.MyConnect" />
+    <configuration name="HomeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lambda.HomeTest" />
       <module name="Arrays" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Restaurant_Ya_Baldy.*" />
+          <option name="PATTERN" value="Lambda.sdas" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,12 +140,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Reservation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Restaurant_Ya_Baldy.Reservation" />
+    <configuration name="HomeTestTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lambda.HomeTestTwo" />
       <module name="Arrays" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Restaurant_Ya_Baldy.*" />
+          <option name="PATTERN" value="Lambda.sdas" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,12 +153,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tasks_OneToTen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Coding_Challenge.Tasks_OneToTen" />
+    <configuration name="Loser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lambda.Loser" />
       <module name="Arrays" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Coding_Challenge.*" />
+          <option name="PATTERN" value="Lambda.sdas" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -178,19 +167,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Customer" />
-      <item itemvalue="Application.Reservation" />
-      <item itemvalue="Application.Tasks_OneToTen" />
-      <item itemvalue="Application.MyConnect" />
-      <item itemvalue="Application.CustomerDAO" />
+      <item itemvalue="Application.Loser" />
+      <item itemvalue="Application.HomeTest" />
+      <item itemvalue="Application.HomeTestTwo" />
+      <item itemvalue="Application.Field" />
+      <item itemvalue="Application.Game" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CustomerDAO" />
-        <item itemvalue="Application.Customer" />
-        <item itemvalue="Application.MyConnect" />
-        <item itemvalue="Application.Tasks_OneToTen" />
-        <item itemvalue="Application.Reservation" />
+        <item itemvalue="Application.Game" />
+        <item itemvalue="Application.Field" />
+        <item itemvalue="Application.HomeTestTwo" />
+        <item itemvalue="Application.HomeTest" />
+        <item itemvalue="Application.Loser" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +260,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575725077340</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="restoran">
+      <created>1577219107363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1577219107363</updated>
+    </task>
+    <task id="LOCAL-00010" summary="base1">
+      <created>1577553092527</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1577553092527</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,7 +297,8 @@
     <MESSAGE value="Restaurant, added reservation" />
     <MESSAGE value="homeWork3" />
     <MESSAGE value="restoran" />
-    <option name="LAST_COMMIT_MESSAGE" value="restoran" />
+    <MESSAGE value="base1" />
+    <option name="LAST_COMMIT_MESSAGE" value="base1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

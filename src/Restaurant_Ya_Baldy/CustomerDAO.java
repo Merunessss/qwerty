@@ -6,14 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 
 public class CustomerDAO implements DAO<Customer> {
-    Connection connection = MyConnect.connect("jdbc:sqlite:E:/123/Restaurant.db");
+    Connection connection = MyConnect.getConnection("jdbc:sqlite:E:/123/Restaurant.db");
 
     @Override
     public boolean create(Customer newObj) {
         String sql = "INSERT INTO Customer (  Name,telephone)  VALUES (?,?)";
         // String sql1 ="INSERT INTO Customer (  Name,telephone)  VALUES ("+newObj.name+","+newObj.telNumber)";
-        try (Connection conn = connection;
-             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+        try (//Connection conn = connection;
+             PreparedStatement pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, newObj.name);
             pstmt.setString(2, newObj.telNumber);
 
@@ -39,8 +39,8 @@ public class CustomerDAO implements DAO<Customer> {
 
         String sql = "DELETE FROM Customer WHERE ID = ?";
 
-        try (Connection conn = connection;
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -54,8 +54,8 @@ public class CustomerDAO implements DAO<Customer> {
 
         String sql = "UPDATE Customer SET Name = ?,telephone = ? WHERE ID = ?";
         System.out.println(newObj.iD + "   +++++++++++");
-        try (Connection conn = connection;
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(3, String.valueOf(newObj.iD));
             pstmt.setString(2, newObj.telNumber);
             pstmt.setString(1, newObj.name);
@@ -74,8 +74,8 @@ public class CustomerDAO implements DAO<Customer> {
         String sql = "SELECT ID,Name,telephone FROM Customer";
 
         try {
-            Connection conn = connection;
-            Statement pstmt = conn.createStatement();
+
+            Statement pstmt = connection.createStatement();
             ResultSet rs = pstmt.executeQuery(sql);
             while (rs.next()) {
                 int id = rs.getInt(1);
@@ -92,14 +92,14 @@ public class CustomerDAO implements DAO<Customer> {
 
 
     public static void main(String[] args) {
-        Customer vasya = new Customer("Vasyqqqqqq", "12123");
+        Customer vasya = new Customer("Vasyqqqqqq33", "12123");
 
         CustomerDAO castDao = new CustomerDAO();
 
         castDao.create(vasya);
 
         // castDao.delete(2);
-        vasya.name = "qwerty";
+        vasya.name = "qwerty33";
       castDao.update(vasya);
 
         System.out.println(castDao.getAll());

@@ -11,7 +11,7 @@ public class Customer {
 
     String telNumber;
     String name;
-    int iD=-1;
+    int iD = -1;
 
     public Customer(String name, String telNumber) {
         this.name = name;
@@ -22,7 +22,7 @@ public class Customer {
     }
 
     public void setiD(int iD) {
-        if(this.iD != -1){
+        if (this.iD != -1) {
             System.out.println("ID unmodified !!! Sorry");
             return;
         }
@@ -63,37 +63,15 @@ public class Customer {
 //
 //        masha.bookTable(rest, numTable, bookingTime, durationBook);
 
-        masha.checkMenu(rest);
+        // masha.checkMenu(rest);
 
-        System.out.println(" DELAI ZAKAZ " );
 
-        boolean flag = true;
-
-        Map<Dish, Map<Integer, Boolean>> zakaz = new HashMap<>();
-
-        while(flag == true){
-            System.out.println("Vedite # bluda i skolko porciy ");
-            String bludoSkolko = scanner.nextLine();
-            //System.out.println(bludoSkolko);
-            String []  array=bludoSkolko.split("[ ]+");
-           // System.out.println(Arrays.toString(array));
-            if(array[0].trim().equals("exit")){
-                break;
-            }
-            HashMap<Integer,Boolean> countBlud=new HashMap<>();
-
-            countBlud.put(Integer.valueOf(array[1].trim()),false);
-            zakaz.put(Dish.values()[Integer.valueOf(array[0].trim())-1],countBlud);
-        }
-
-        masha.placeOrder(zakaz, rest);
+        masha.placeOrder( rest);
+        masha.placeOrder( rest);
         System.out.println(rest.orders.toString());
 
 
     }
-
-
-
 
 
     void checkTables(Restaurant restor, LocalDateTime checkTime, int timeToSpend) {
@@ -130,22 +108,39 @@ public class Customer {
     }
 
     void checkMenu(Restaurant restor) {
-        int index=1;
-        for (Dish temp:Dish.values() ) {
-            System.out.println( index++ +". "+temp);
+        int index = 1;
+        for (Dish temp : restor.eDish) {
+            System.out.println(index++ + ". " + temp);
         }
 
     }
 
-    Order placeOrder(Map<Dish, Map<Integer, Boolean>> allFood, Restaurant restaurant) {
+    Order placeOrder(Restaurant restaurant) {
+        checkMenu(restaurant);
+        System.out.println(" DELAI ZAKAZ ");
+        boolean flag = true;
+        Map<Dish, Map<Integer, Boolean>> zakaz = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
+        while (flag == true) {
+            System.out.println("Vedite # bluda i skolko porciy ");
+            String bludoSkolko = scanner.nextLine();
+            //System.out.println(bludoSkolko);
+            String[] array = bludoSkolko.split("[ ]+");
+            // System.out.println(Arrays.toString(array));
+            if (array[0].trim().equals("exit")) {
+                break;
+            }
+            HashMap<Integer, Boolean> countBlud = new HashMap<>();
 
-        Order zakaz = new Order(restaurant.orders.size() + 1);
+            countBlud.put(Integer.valueOf(array[1].trim()), false);
+            zakaz.put(restaurant.dishManager.find(Integer.valueOf(array[0].trim())), countBlud);
+        }
+        Order order = new Order(restaurant.orders.size() + 1);
+        order.foodSum.putAll(zakaz);
 
-        zakaz.foodSum.putAll(allFood);
+        restaurant.orders.add(order);
 
-        restaurant.orders.add(zakaz);
-
-        return zakaz;
+        return order;
     }
 
     boolean addExtraDishToOrder(Restaurant restor, Dish bludo, int orderNum1) {
@@ -202,5 +197,7 @@ public class Customer {
                 ", iD=" + iD +
                 '}';
     }
+
+
 }
 
