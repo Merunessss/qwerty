@@ -1,7 +1,10 @@
 package ThreadSample;
 
+import org.apache.commons.collections4.list.TreeList;
+
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class WishThread {
@@ -31,7 +34,7 @@ public class WishThread {
         Gift.giftList.add(bed);
         Gift.giftList.add(food);
 
-        System.out.println(Gift.giftList);
+        System.out.println(Gift.giftList + " VTORAYA COLLECTSIA");
 
         Wallet wallet = new Wallet();
 
@@ -50,7 +53,9 @@ class Gift implements Comparable<Gift> {
     int desireIndex;
     int degreeAvr;
 
-    static Set<Gift> giftList =Collections.synchronizedSet(new TreeSet<>());
+    static Set<Gift> giftList1 = Collections.synchronizedSet(new TreeSet<>());
+
+    static CopyOnWriteArrayList<Gift> giftList = new CopyOnWriteArrayList<>(giftList1);
 
     static Map<Gift, LocalDateTime> boughtGifts = Collections.synchronizedMap(new HashMap<>());
 
@@ -58,9 +63,8 @@ class Gift implements Comparable<Gift> {
         this.name = name;
         this.price = price;
         this.desireIndex = desireIndex;
-        this.degreeAvr = desireIndex*1000 / price;
+        this.degreeAvr = desireIndex * 1000 / price;
         giftList.add(this);
-
     }
 
 
@@ -118,15 +122,18 @@ class Wallet {
 
     });
 
-    private  void buyGift() {
-        for (Gift temp : Gift.giftList) {
-            if (temp.price <= cash) {
-                Gift.boughtGifts.put(temp, LocalDateTime.now());
-                Gift.giftList.remove(temp);
-                cash = cash - temp.price;
-                System.out.println(temp);
-                if (Gift.giftList.size() == 0) {
-                    System.out.println("qqqqqqqqqqq");
+    private void buyGift() {
+         //for (Gift temp : Gift.giftList){
+        for (int i = 0; i < Gift.giftList.size()-1; i++) {
+
+            if (Gift.giftList.get(i).price <= cash) {
+                Gift.boughtGifts.put(Gift.giftList.get(i), LocalDateTime.now());
+                Gift.giftList.remove(Gift.giftList.get(i));
+                cash = cash - Gift.giftList.get(i).price;
+                System.out.println("Successfully bought = " + Gift.giftList.get(i));
+                System.out.println(Gift.giftList.size() + " ASDSADASDASDASDADADS ");
+                if (Gift.giftList.size() == 1) {
+                    System.out.println(" VSE KUPIL URA ");
                     flagWishCompleted = true;
                 }
             }
